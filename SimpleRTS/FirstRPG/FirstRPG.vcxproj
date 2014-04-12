@@ -14,6 +14,7 @@
     <ProjectGuid>{244ED51A-5035-4089-A375-AFBA756FA4C2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>FirstRPG</RootNamespace>
+    <ProjectName>SimpleRTS</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,9 +79,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="GameObject.h" />
