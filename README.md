@@ -8,4 +8,6 @@ SIMPLE RTS hopes to a redepmtion on Battleships, although, will be fairly differ
 GAME
 ====
 
-I'm unsure what the game goal will be at this point.  
+Built in visual studio using C++.
+
+I'm unsure what the game goal will be at this point.  So far the game has a minimap.
