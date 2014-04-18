@@ -20,7 +20,7 @@ CMain::CMain(int passed_screenWidth, int passed_screenHeight)
 	mini_map = new CMiniMap(csdl_setup->getRenderer(), "data/miniMap.png", 700, 500, 200, 200, &MenuX, &MenuY);
 	mini_mapFrame = new CSprite(csdl_setup->getRenderer(), "data/miniMap_frame.png", 700, 500, 50, 50, &MiniMapX, &MiniMapY);
 	
-	dude = new CUnit(100, csdl_setup->getRenderer(), "data/charBlue.png", 100, 100, 50, 50,4,4, &CameraX, &CameraY);
+	dude = new CUnit(100, csdl_setup->getRenderer(), "data/charBlue2.png", 100, 100, 50, 50,6,4, &CameraX, &CameraY);
 
 	dude2 = new CUnit(100, csdl_setup->getRenderer(), "data/charBlue.png", 1000, 1000, 50, 50, 4, 4, &CameraX, &CameraY);
 

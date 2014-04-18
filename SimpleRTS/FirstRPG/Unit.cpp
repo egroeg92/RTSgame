@@ -23,19 +23,21 @@ CUnit::CUnit(float phealth, SDL_Renderer* pRenderer, std::string filename, int x
 
 	health = phealth;
 
+	puke = false;
+
 
 
 }
 
 
 
-void CUnit::playAnimation(int endFrame, float speed)
+void CUnit::playAnimation(int beginFrame, int endFrame, float speed)
 {
 	if (animationDelay + speed < SDL_GetTicks())
 	{
 		if (endFrame <= current_frame)
 		{
-			current_frame = 0;
+			current_frame = beginFrame;
 		}
 		else
 		{
@@ -79,6 +81,11 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 							move_U = true;
 							row = 3;
 							break;
+						case SDLK_SPACE:
+							puke = true;
+							if (current_frame == 4) { current_frame = 5; }
+							else { current_frame = 4; }
+							break;
 						}
 						break;
 	}
@@ -105,6 +112,10 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 						  move = false;
 						  move_U = false;
 						  break;
+					  case SDLK_SPACE:
+						  puke = false;
+						  
+						  break;
 					  }
 					  break;
 	}
@@ -114,8 +125,14 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 
 	if (timeCheck + 5 < SDL_GetTicks())
 	{
-		//diag moves twice as fast
-		if (move_R && move_U)
+		
+		if (puke)
+		{
+
+			move = false;
+
+		}
+		else if (move_R && move_U)
 		{
 			move = true;
 			dir = UP_R;
@@ -181,10 +198,16 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 	}
 	if (move)
 	{
-		playAnimation(endFrame,speed);
+		playAnimation(0,endFrame,speed);
 		camera->setX(-X_pos);
 		camera->setY(-Y_pos);
 
+	}
+	if (puke)
+	{
+		playAnimation(4, 5, speed);
+		camera->setX(-X_pos);
+		camera->setY(-Y_pos);
 	}
 }
 

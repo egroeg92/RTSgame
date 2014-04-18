@@ -20,7 +20,7 @@ public:
 
 private:
 	void setAnimation(int px, int py);
-	void playAnimation(int EndFrame, float Speed);
+	void playAnimation(int BeginFrame,int EndFrame, float Speed);
 
 	int current_frame;
 	int animationDelay;
@@ -40,6 +40,7 @@ private:
 	int dir;
 
 	float health;
+	bool puke;
 
 };
 
