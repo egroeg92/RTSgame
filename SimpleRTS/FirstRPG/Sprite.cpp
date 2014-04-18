@@ -35,24 +35,32 @@ CSprite::CSprite(SDL_Renderer* pRenderer, std::string filename, int x, int y, in
 	Camera.y = rect.y + *CameraY;
 	Camera.w = rect.w;
 	Camera.h = rect.h;
-
-
+	
+	id = SDL_GetTicks();
 
 }
-
 
 CSprite::~CSprite()
 {
 	SDL_DestroyTexture(image);
 }
-
+float CSprite::getId()
+{
+	return id;
+}
+bool CSprite::equals(CSprite s)
+{
+	if (s.getId() == id)
+	{
+		return true;
+	}
+	return false;
+}
 void CSprite::Draw()
 {
 	Camera.x = rect.x + *CameraX;
 	Camera.y = rect.y + *CameraY;
 	SDL_RenderCopy(renderer, image, &crop, &Camera);
-
-
 }
 
 void CSprite::setX(float x)
@@ -106,5 +114,10 @@ void CSprite::setHeight(int x)
 void CSprite::setWidth(int x)
 {
 	rect.w = x;
+}
+void CSprite::setCrop(int x, int y)
+{
+	crop.w = x;
+	crop.h = y;
 }
 

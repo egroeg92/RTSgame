@@ -5,8 +5,8 @@
 CCamera::CCamera(float w, float h)
 {
 	miniMap = false;
-	CameraX = 0;
-	CameraY = 0;
+	CameraX = 100;
+	CameraY = 100;
 	MiniMapX = 0;
 	MiniMapY = 0;
 	screenHeight = h;
@@ -21,10 +21,9 @@ CCamera::~CCamera()
 void CCamera::setX(float x)
 {
 	CameraX = x+(screenWidth/2);
-
 	MiniMapX = -(CameraX / 18);
-
 }
+
 void CCamera::setY(float y)
 {
 	CameraY = y+(screenHeight/2)-10;
@@ -82,8 +81,7 @@ void CCamera::Draw(float MouseX, float MouseY, CSDL_Setup *setup)
 			miniMap = false;
 		}
 		if (miniMap)
-		{
-			
+		{	
 			float x = (MouseX - 700)* (18);
 			float y = (MouseY - 500)* (12);
 
@@ -92,15 +90,10 @@ void CCamera::Draw(float MouseX, float MouseY, CSDL_Setup *setup)
 
 			CameraX = -MiniMapX * 18;
 			CameraY = -MiniMapY * 12;
-
-
 		}
-
 	}
 
 	else{
-
-
 		MiniMapX = -(CameraX / 18);
 		MiniMapY = -(CameraY / 12);
 	}

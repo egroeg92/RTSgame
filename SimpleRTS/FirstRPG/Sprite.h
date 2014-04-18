@@ -24,7 +24,12 @@ public:
 
 	void setAnimation(int pX, int pY);
 	void playAnimation(int beginFrame, int endFrame, int row, float speed);
+
+	bool equals(CSprite s);
+
+	float getId();
 	
+	void CSprite::setCrop(int x, int y);
 	
 protected:
 
@@ -44,6 +49,8 @@ protected:
 	int img_height;
 
 	SDL_Renderer* renderer;
+
+	float id;
 
 
 

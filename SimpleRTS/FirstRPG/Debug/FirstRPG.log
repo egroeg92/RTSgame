@@ -1,15 +1,23 @@
-﻿Build started 4/17/2014 6:56:22 PM.
+﻿Build started 4/17/2014 9:07:54 PM.
      1>Project "C:\Users\George\Documents\Visual Studio 2013\Projects\RTSgame\SimpleRTS\FirstRPG\FirstRPG.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (FirstRPG.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\George\Documents\Visual Studio 2013\Projects\Libraries\SDL2-2.0.1\include" /I"C:\Users\George\Documents\Visual Studio 2013\Projects\Libraries\SDL2_image-2.0.0\include" /I"C:\Users\George\Documents\Visual Studio 2013\Projects\Libraries\SDL2_mixer-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Unit.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\George\Documents\Visual Studio 2013\Projects\Libraries\SDL2-2.0.1\include" /I"C:\Users\George\Documents\Visual Studio 2013\Projects\Libraries\SDL2_image-2.0.0\include" /I"C:\Users\George\Documents\Visual Studio 2013\Projects\Libraries\SDL2_mixer-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt FirstRPG.cpp Main.cpp Unit.cpp
          Unit.cpp
-     1>c:\users\george\documents\visual studio 2013\projects\rtsgame\simplerts\firstrpg\unit.cpp(110): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\george\documents\visual studio 2013\projects\rtsgame\simplerts\firstrpg\unit.cpp(115): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+         Compiling...
+         Main.cpp
+     1>c:\users\george\documents\visual studio 2013\projects\rtsgame\simplerts\firstrpg\main.cpp(7): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\george\documents\visual studio 2013\projects\rtsgame\simplerts\firstrpg\main.cpp(58): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         FirstRPG.cpp
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\George\Documents\Visual Studio 2013\Projects\RTSgame\SimpleRTS\Debug\SimpleRTS.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\George\Documents\Visual Studio 2013\Projects\Libraries\SDL2_image-2.0.0\lib\x86" /LIBPATH:"C:\Users\George\Documents\Visual Studio 2013\Projects\Libraries\SDL2_mixer-2.0.0\lib\x86" /LIBPATH:"C:\Users\George\Documents\Visual Studio 2013\Projects\Libraries\SDL2-2.0.1\lib\x86" SDL2.lib SDL2main.lib SDL2_mixer.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\George\Documents\Visual Studio 2013\Projects\RTSgame\SimpleRTS\Debug\SimpleRTS.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\George\Documents\Visual Studio 2013\Projects\RTSgame\SimpleRTS\Debug\SimpleRTS.lib" /MACHINE:X86 Debug\Camera.obj
          Debug\FirstRPG.obj
          Debug\GameObject.obj
          Debug\Main.obj
+         Debug\MiniMap.obj
          Debug\SDL_Setup.obj
          Debug\Sprite.obj
          Debug\Unit.obj
@@ -18,4 +26,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.63
+Time Elapsed 00:00:01.19

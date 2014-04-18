@@ -2,7 +2,7 @@
 #include "SDL_Setup.h"
 #include "Sprite.h"
 #include "Camera.h"
-
+#include "MiniMap.h"
 #include "Unit.h"
 
 class CMain
@@ -17,7 +17,8 @@ public:
 
 private:
 	CUnit *dude;
-	
+	CUnit *dude2;
+
 	CCamera* Camera;
 	float CameraX;
 	float CameraY;
@@ -30,7 +31,7 @@ private:
 	CSDL_Setup* csdl_setup;
 	CSprite* back_ground;
 	CSprite* menu_frame;
-	CSprite* mini_map;
+	CMiniMap* mini_map;
 	CSprite* mini_mapFrame;
 
 	//Mouse movement
@@ -40,6 +41,6 @@ private:
 	int curX;
 	int curY;
 
-	bool follow;
+
 };
 

@@ -3,8 +3,8 @@
 
 
 
-CUnit::CUnit(float phealth, SDL_Renderer* pRenderer, std::string filename, int x, int y, int w, int h,int pamount_frame_x, int pamount_frame_y, float *pCameraX, float *pCameraY) 
-: CGameObject(phealth, pRenderer,filename,x,y,w,h,pCameraX,pCameraY)
+CUnit::CUnit(float phealth, SDL_Renderer* pRenderer, std::string filename, int x, int y, int w, int h, int pamount_frame_x, int pamount_frame_y, float *pCameraX, float *pCameraY)
+: CGameObject(phealth, pRenderer, filename, x, y, w, h, pCameraX, pCameraY)
 {
 	move = false;
 	move_D = false;
@@ -18,7 +18,12 @@ CUnit::CUnit(float phealth, SDL_Renderer* pRenderer, std::string filename, int x
 	amount_frame_y = pamount_frame_y;
 
 	current_frame = 0;
-	
+
+	dir = RIGHT;
+
+	health = phealth;
+
+
 
 }
 
@@ -26,7 +31,6 @@ CUnit::CUnit(float phealth, SDL_Renderer* pRenderer, std::string filename, int x
 
 void CUnit::playAnimation(int endFrame, float speed)
 {
-	std::cout << current_frame << endFrame << std::endl;
 	if (animationDelay + speed < SDL_GetTicks())
 	{
 		if (endFrame <= current_frame)
@@ -59,6 +63,7 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 						switch (csdl_setup->getMainEvent()->key.keysym.sym)
 						{
 						case SDLK_a:
+
 							move_L = true;
 							row = 1;
 							break;
@@ -113,7 +118,7 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 		if (move_R && move_U)
 		{
 			move = true;
-
+			dir = UP_R;
 			setX(X_pos + 1);
 			setY(Y_pos - 1);
 
@@ -121,7 +126,7 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 		else if (move_R && move_D)
 		{
 			move = true;
-
+			dir = RIGHT_D;
 			setX(X_pos + 1);
 			setY(Y_pos + 1);
 
@@ -130,6 +135,7 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 		{
 
 			move = true;
+			dir = LEFT_U;
 			setX(X_pos - 1);
 			setY(Y_pos -1);
 
@@ -137,6 +143,7 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 		else if (move_L && move_D)
 		{
 			move = true;
+			dir = DOWN_L;
 			setX(X_pos - 1);
 			setY(Y_pos + 1);
 
@@ -145,24 +152,28 @@ void CUnit::keyControl(CSDL_Setup* csdl_setup,CCamera* camera, int endFrame, flo
 		else if (move_R && !move_L && !move_U && !move_D)
 		{
 			move = true;
+			dir = RIGHT;
 			setX(X_pos + 2);
 
 		}
 		else if (move_L && !move_R && !move_U && !move_D)
 		{
 			move = true;
+			dir = LEFT;
 			setX(X_pos - 2);
 
 		}
 		else if (move_D && !move_L && !move_U && !move_R)
 		{
 			move = true;
+			dir = DOWN;
 			setY(Y_pos + 2);
 
 		}
 		else if (move_U && !move_L && !move_R && !move_D)
 		{
 			move = true;
+			dir = UP;
 			setY(Y_pos - 2);
 
 		}
