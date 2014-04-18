@@ -2,13 +2,15 @@
 #include "Camera.h"
 
 
-CCamera::CCamera()
+CCamera::CCamera(float w, float h)
 {
 	miniMap = false;
 	CameraX = 0;
 	CameraY = 0;
 	MiniMapX = 0;
 	MiniMapY = 0;
+	screenHeight = h;
+	screenWidth = w;
 	CameraSpeed =  0.45f;
 }
 
@@ -16,10 +18,24 @@ CCamera::CCamera()
 CCamera::~CCamera()
 {
 }
+void CCamera::setX(float x)
+{
+	CameraX = x+(screenWidth/2);
+
+	MiniMapX = -(CameraX / 18);
+
+}
+void CCamera::setY(float y)
+{
+	CameraY = y+(screenHeight/2)-10;
+	MiniMapY = -(CameraY / 12);
+}
+
 float CCamera::getX()
 {
 	return CameraX;
 }
+
 float CCamera::getMiniX()
 {
 	return MiniMapX;
@@ -36,7 +52,6 @@ float CCamera::getMiniY()
 }
 void CCamera::Draw(float MouseX, float MouseY, CSDL_Setup *setup)
 {
-	std::cout << CameraX << std::endl;
 	if (MouseX < 20 && MouseX > 0  && CameraX <200)
 	{
 		CameraX += CameraSpeed;

@@ -21,6 +21,10 @@ public:
 	void setHeight(int x);
 
 	void SetOrigin(float x, float y);
+
+	void setAnimation(int pX, int pY);
+	void playAnimation(int beginFrame, int endFrame, int row, float speed);
+	
 	
 protected:
 
@@ -41,7 +45,7 @@ protected:
 
 	SDL_Renderer* renderer;
 
-	int animationDelay;
+
 
 };
 

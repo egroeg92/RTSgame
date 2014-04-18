@@ -36,7 +36,6 @@ private:
 	//Mouse movement
 	int MouseX;
 	int MouseY;
-	int timeCheck;
 
 	int curX;
 	int curY;

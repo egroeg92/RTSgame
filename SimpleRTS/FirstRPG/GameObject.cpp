@@ -8,9 +8,6 @@ CGameObject::CGameObject(float phealth, SDL_Renderer* pRenderer, std::string fil
 	health = phealth;
 }
 
-CGameObject::~CGameObject() 
-{
-}
 
 void CGameObject::repair(float d)
 {

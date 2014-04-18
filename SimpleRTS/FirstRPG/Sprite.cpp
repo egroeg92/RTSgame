@@ -28,7 +28,6 @@ CSprite::CSprite(SDL_Renderer* pRenderer, std::string filename, int x, int y, in
 	Origin_X = 0;
 	Origin_Y = 0;
 
-	animationDelay = SDL_GetTicks();
 
 	CameraX = pCameraX;
 	CameraY = pCameraY;
@@ -36,6 +35,8 @@ CSprite::CSprite(SDL_Renderer* pRenderer, std::string filename, int x, int y, in
 	Camera.y = rect.y + *CameraY;
 	Camera.w = rect.w;
 	Camera.h = rect.h;
+
+
 
 }
 
@@ -53,6 +54,7 @@ void CSprite::Draw()
 
 
 }
+
 void CSprite::setX(float x)
 {
 	X_pos = x;
